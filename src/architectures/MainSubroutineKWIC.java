@@ -7,7 +7,6 @@ public class MainSubroutineKWIC {
     private List<String> lines = new ArrayList<>();
     private List<String> shiftedLines = new ArrayList<>();
 
-    // 读取输入文件
     public void input(String filePath) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(filePath));
         String line;
@@ -17,7 +16,6 @@ public class MainSubroutineKWIC {
         reader.close();
     }
 
-    // 循环移位
     public void shift() {
         for (String line : lines) {
             String[] words = line.split(" ");
@@ -29,12 +27,10 @@ public class MainSubroutineKWIC {
         }
     }
 
-    // 按字母顺序排序
     public void alphabetize() {
         Collections.sort(shiftedLines);
     }
 
-    // 输出到文件
     public void output(String filePath) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
         for (String line : shiftedLines) {
